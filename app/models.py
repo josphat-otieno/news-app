@@ -13,13 +13,13 @@ class Articles:
     '''
     articles class to define articles objects
     '''
-    def __init__(self, title,author, description, publishedAt, urlToImage,url,):
+    def __init__(self, title,author, description, publishedAt, urlToImage,url):
         '''
         method to initialise an object
         '''
         self.title = title
         self.author = author
-        self.escription = description
+        self.description = description
         self.publishedAt = publishedAt
         self.urlToImage = urlToImage
         self.url = url

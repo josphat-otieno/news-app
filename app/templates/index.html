@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +10,20 @@
      {% endif %}
 </head>
 <body>
-    <h1>{{message}}</h1>
-    <h3>News sources</h3>
-    <ol>
-        {% for source in sources %}
-            <li><a href="{{source.url}}">{{source.name}}</a></li>
-        {% endfor %}
-    </ol>
+   
+    <div class="row">
+        <div class="col-md-3">
+            <h1>{{message}}</h1>
+            <h3>News sources</h3>
+            <hr>
+            <ol>
+                {% for source in sources %}
+                    <!-- <li><a href="{{source.url}}">{{source.name}}</a></li> -->
+                    <a href="/article/{{source.id}}">
+                        <p class="text-capitalize text-muted">{{source.name}}</p>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
 </body>
 </html>
