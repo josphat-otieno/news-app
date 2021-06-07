@@ -21,7 +21,7 @@ def create_app(config_name):
     from .requests import configue_request
     configue_request(app)
 
-    # we will add views and forms
+    
     return  app
 
 

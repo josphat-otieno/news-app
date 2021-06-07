@@ -1,5 +1,5 @@
 import urllib.request, json
-from .models import News
+from .models import Articles, News
 
 
 
@@ -70,3 +70,24 @@ def get_articles(id):
         if get_articles_reponse['articles']:
             articles_results_list=get_articles_reponse['articles']
             articles_results=process_articles(articles_results_list)
+
+    return articles_results
+
+def process_articles(article_list):
+    articles_results=[]
+
+    for article_item in article_list:
+
+        title = article_item.et ('title')         
+        author = article_item.get('author')
+        description = article_item.get('description')
+        publishedAt = article_item.get('publishedAt')
+        urlToImage = article_item.get('urlToImage')
+        url = article_item.get('url')
+        
+
+            
+        articles_object= Articles(title,author,description,publishedAt,urlToImage,url,)
+        articles_results.append(articles_object)
+
+    return articles_results       
