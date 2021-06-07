@@ -91,3 +91,21 @@ def process_articles(article_list):
         articles_results.append(articles_object)
 
     return articles_results       
+
+def get_top_headlines():
+    '''
+    function that gets the response to the category json
+    '''
+    get_top_headlines_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
+    print(get_top_headlines_url)
+    with urllib.request.urlopen(get_top_headlines_url) as url:
+        get_top_headlines_data = url.read()
+        get_top_headlines_response = json.loads(get_top_headlines_data)
+
+        top_headlines_results = None
+
+        if get_top_headlines_response['articles']:
+            get_headlines_list = get_top_headlines_response['articles']
+            get_headlines_results = process_articles(get_headlines_list)
+
+    return top_headlines_results
