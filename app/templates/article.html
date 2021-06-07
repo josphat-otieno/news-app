@@ -27,10 +27,30 @@
 {% endblock %}
 
 {% block content %}
-<h1>These are thr trending articles</h1>
+<h1>These are the trending articles here</h1>
     <ul>
         {% for article in articles %}
-            <li>{{article.author}}</li>
+            <div class="card">
+                <div class="card-header">
+                    <p>{{article.title}}</p>
+                </div>
+                <div class="card-body">
+                    <img src="{{article.urlToImage}}" alt="{{article.title}}"  width="300px" height="270px">
+                    <p>{{article.description}}</p>
+                    <p><a href="{{article.url}}">Read more...</a></p>
+                </div>
+                <div class="card-footer">
+                    <p>Published by {{article.author}} at {{article.publishedAt}}</p>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
 {% endblock %}
+
+<!-- 
+name=article_item.get('name')
+title = article_item.get ('title')         
+author = article_item.get('author')
+description = article_item.get('description')
+publishedAt = article_item.get('publishedAt')
+urlToImage = article_item.get('urlToImage')
+url = article_item.get('url') -->

@@ -11,40 +11,30 @@
     {% endif %}
 {% endblock %}
 
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
 
-<!-- <body>
-
-    <div class="row">
-        <div class="col-md-3">
-            <h1>{{message}}</h1>
-            {% for top_healine in top_headlines %}
-            <ul>
-                <li>{{top_healine.title}}-{{top_healine.publishedAt}}</li>
-
-            </ul>
-            {% endfor %}
-</body>
-<h3>News sources</h3>
-<hr>
-<ol>
-    {% for source in sources %} -->
-    <!-- <li><a href="{{source.url}}">{{source.name}}</a></li> -->
-    <!-- <a href="/article/{{source.id}}">
-        <p class="text-capitalize text-muted">{{source.name}}</p>
-        {% endfor %}
-</ol>
-</div>
-</div>
-
-</html> -->
 {% block content %}
 <div class="row">
     <div class="col-md-9">
         <h1>{{message}}</h1>
-        {% for top_healine in top_headlines %}
-        <ul>
-            <li>{{top_healine.title}}-{{top_healine.publishedAt}}</li>
-        </ul>
+        {% for top_headline in top_headlines %}
+            <div class="card">
+                <div class="card-header">
+                    <p>{{top_headline.title}}</p>
+                </div>
+                <div class="card-body">
+                    <img src="{{top_headline.urlToImage}}" alt="{{top_headline.title}}" width="300px" height="270px">
+                    <p>{{top_headline.description}}</p>
+                    <p><a href="{{top_headline.url}}">Read more...</a></p>
+                </div>
+                <div class="card-footer">
+                    <p>Published by {{top_headline.author}} at {{top_headline.publishedAt}}</p>
+                </div>
+            </div>    
+        
         {% endfor %}
     </div>
     <div class="col-md-3">
@@ -52,12 +42,18 @@
         <hr>
         <ol>
             {% for source in sources %}
-            <!-- <li><a href="{{source.url}}">{{source.name}}</a></li> -->
             <a href="/article/{{source.id}}">
                 <p class="text-capitalize text-muted">{{source.name}}</p>
-                {% endfor %}
+            {% endfor %}
         </ol>
     </div>
 </div>
 {% endblock %}
-
+<!-- 
+name=article_item.get('name')
+title = article_item.get ('title')         
+author = article_item.get('author')
+description = article_item.get('description')
+publishedAt = article_item.get('publishedAt')
+urlToImage = article_item.get('urlToImage')
+url = article_item.get('url') -->
