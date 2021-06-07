@@ -77,7 +77,7 @@ def process_articles(article_list):
     articles_results=[]
 
     for article_item in article_list:
-
+        name=article_item.get('name')
         title = article_item.get ('title')         
         author = article_item.get('author')
         description = article_item.get('description')
@@ -85,7 +85,7 @@ def process_articles(article_list):
         urlToImage = article_item.get('urlToImage')
         url = article_item.get('url')
              
-        articles_object= Articles(title,author,description,publishedAt,urlToImage,url,)
+        articles_object= Articles(name,title,author,description,publishedAt,urlToImage,url,)
         articles_results.append(articles_object)
 
     return articles_results       
