@@ -11,12 +11,14 @@ base_url= None
 
 # getting the article base url
 article_base_url=None
+category_base_url=None
 
 def configue_request(app):
     global api_key,base_url,article_base_url
     api_key = app.config['NEWS_API_KEY']
     base_url =app.config['NEWS_API_BASE_URL']
     article_base_url=app.config['ARTICLE_API_BASE_URL']
+    category_base_url=app.config['CATEGORY_API_BASE_URL']
 
 def get_news_sources(sources):
     '''
@@ -108,20 +110,20 @@ def get_top_headlines():
 
     return top_headlines_results
 
-# def get_category():
-#     '''
-#     function that gets the response to the category json
-#     '''
-#     get_category_url = cat_url.format(cat_name,api_key)
-#     print(get_category_url)
-#     with urllib.request.urlopen(get_category_url) as url:
-#         get_category_data = url.read()
-#         get_cartegory_response = json.loads(get_category_data)
+def get_news_category(category_name):
+    '''
+    function that gets the response to the category json
+    '''
+    get_category_url = category_base_url.format(category_name,api_key)
+    print(get_category_url)
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        get_cartegory_response = json.loads(get_category_data)
 
-#         get_cartegory_results = None
+        get_cartegory_results = None
 
-#         if get_cartegory_response['articles']:
-#             get_cartegory_list = get_cartegory_response['articles']
-#             get_cartegory_results = process_articles_results(get_cartegory_list)
+        if get_cartegory_response['articles']:
+            get_cartegory_list = get_cartegory_response['articles']
+            get_cartegory_results = process_articles(get_cartegory_list)
 
-#     return get_cartegory_results
+    return get_cartegory_results
