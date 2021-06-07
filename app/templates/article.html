@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,4 +16,21 @@
         {% endfor %}
     </ul>
 </body>
-</html>
+</html> -->
+{% extends 'base.html' %}
+{% block title %}
+    {% if title %}
+    <time>{{title}}</time>
+    {% else %} 
+     <title>trending Articles</title>
+     {% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>These are thr trending articles</h1>
+    <ul>
+        {% for article in articles %}
+            <li>{{article.author}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

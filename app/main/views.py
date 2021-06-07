@@ -23,7 +23,7 @@ def articles(id):
     
     return render_template('article.html' ,articles=articles, title = title)
 
-@main.route('/categories/<cat_name>')
+@main.route('/categories/<category_name>')
 def category(category_name):
     '''
     function to return the categories.html page and its content
