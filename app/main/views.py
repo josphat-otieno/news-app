@@ -7,7 +7,7 @@ def index():
     '''
     view root function that returns the idex page and its data
     '''
-    title="Wlcome to your favorite news app"
+    title="Welcome to your favorite news app"
     message='Read your favorite news here'
     # getting the sources
     news_sources=get_news_sources('sources')
