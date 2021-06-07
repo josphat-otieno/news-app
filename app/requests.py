@@ -14,7 +14,7 @@ article_base_url=None
 category_base_url=None
 
 def configue_request(app):
-    global api_key,base_url,article_base_url
+    global api_key,base_url,article_base_url,category_base_url
     api_key = app.config['NEWS_API_KEY']
     base_url =app.config['NEWS_API_BASE_URL']
     article_base_url=app.config['ARTICLE_API_BASE_URL']
