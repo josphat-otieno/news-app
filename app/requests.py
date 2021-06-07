@@ -6,14 +6,18 @@ from .models import News
 # getting the api key
 api_key=None
 
-# getting the movie base url
+# getting the news base url
 base_url= None
+
+# getting the article base url
+article_base_url=None
 
 def configue_request(app):
     global api_key,base_url
     api_key = app.config['NEWS_API_KEY']
     base_url =app.config['NEWS_API_BASE_URL']
- 
+    article_base_url=app.config['ARTICLE_BASE_URL']
+
 def get_news_sources(sources):
     '''
     function to get json to our url requests
@@ -33,7 +37,7 @@ def get_news_sources(sources):
 
 def process_results(news_list):
             '''
-            function to process news results and transforms them t a list of objects
+            function to process news results and transforms them to a list of objects
         
             args:
                 news_list: a list of dictionaries that contains movie details
@@ -51,3 +55,18 @@ def process_results(news_list):
                 news_results.append(news_object)
 
             return news_results       
+
+def get_articles(id):
+    '''
+    function to get jsonn object to our url request on articles
+    '''
+    get_article_url=article_base_url.format(id,api_key)
+    with urllib.request.urlopen(get_article_url) as url:
+        get_articles_data=url.read()
+        get_articles_reponse=json.loads(get_articles_data)
+
+        articles_results = None
+
+        if get_articles_reponse['articles']:
+            articles_results_list=get_articles_reponse['articles']
+            articles_results=process_articles(articles_results_list)
