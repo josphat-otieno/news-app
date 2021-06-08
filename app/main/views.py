@@ -9,7 +9,6 @@ def index():
     '''
     title="Welcome to your favorite news app"
     message='Read your favorite news here'
-    # getting the sources
     news_sources=get_news_sources('sources')
     top_headlines = get_top_headlines()
     return render_template('index.html', title=title, message=message, sources=news_sources,top_headlines=top_headlines)
