@@ -3,12 +3,12 @@
 
 
 {% block title %}
-    
-    {% if title %}
-        {{title}}
-    {% else %}
-        <title>News App</title>
-    {% endif %}
+
+{% if title %}
+{{title}}
+{% else %}
+<title>News App</title>
+{% endif %}
 {% endblock %}
 
 {% block styles %}
@@ -17,45 +17,39 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid text-lead">
-<div class="row">
-    <div class="col-md-9">
-        <h1 class="text text-center">{{message}}</h1>
-        {% for top_headline in top_headlines %}
-            <div class="card">
-                <div class="card-header">
-                    <p>{{top_headline.title}}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="text text-center">{{message}}</h1>
+            <div class="card-columns">
+                {% for top_headline in top_headlines %}
+                <div class="card">
+                    <div class="card-header">
+                        <p>{{top_headline.title}}</p>
+                    </div>
+                    <div class="card-body">
+                        <img src="{{top_headline.urlToImage}}" alt="{{top_headline.title}}" width="300px"
+                            height="300px">
+                        <p><a href="{{top_headline.url}}">{{top_headline.description}}</a></p>
+                    </div>
+                    <div class="card-footer">
+                        <p> Published by <span class="author"> {{top_headline.author}}</span> at <span
+                                class="time">{{top_headline.publishedAt}}</span></p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <img src="{{top_headline.urlToImage}}" alt="{{top_headline.title}}" width="1100px" height="500px">
-                    <p>{{top_headline.description}}</p>
-                    <p><a href="{{top_headline.url}}">Read more...</a></p>
-                </div>
-                <div class="card-footer">
-                    <p> Published by  <span class="author"> {{top_headline.author}}</span> at <span class="time">{{top_headline.publishedAt}}</span></p>
-                </div>
-            </div>    
-        
-        {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h3 class="text text-capitalize">News sources</h3>
+            <hr>
+            <ol>
+                {% for source in sources %}
+                <a href="/article/{{source.id}}">
+                    <p class="text-capitalize text-muted">{{source.name}}</p>
+                    {% endfor %}
+            </ol>
+        </div>
     </div>
-    <div class="col-md-3">
-        <h3 class="text text-capitalize">News sources</h3>
-        <hr>
-        <ol>
-            {% for source in sources %}
-            <a href="/article/{{source.id}}">
-                <p class="text-capitalize text-muted">{{source.name}}</p>
-            {% endfor %}
-        </ol>
-    </div>
-</div>
 </div>
 {% endblock %}
-<!-- 
-name=article_item.get('name')
-title = article_item.get ('title')         
-author = article_item.get('author')
-description = article_item.get('description')
-publishedAt = article_item.get('publishedAt')
-urlToImage = article_item.get('urlToImage')
-url = article_item.get('url') -->
