@@ -10,24 +10,30 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/article.css')}}">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-<h1 class="text-lead">These are the trending articles here</h1>
-<div class="card-columns">
-    {% for article in articles %}
-     <div class="card">
+<div class="container">
+    <h1 class="text-lead text-center">These are the trending articles here</h1>
+    <div class="card-columns">
+        {% for article in articles %}
+        <div class="card">
             <div class="card-header">
-                <p>{{article.title}}</p>
+                <p class>{{article.title}}</p>
             </div>
             <div class="card-body">
                 <img src="{{article.urlToImage}}" alt="{{article.title}}" width="300px" height="300px">
                 <p class="text text-lead"><a href="{{article.url}}">{{article.description}}</a></p>
-             </div>
-            <div class="card-footer">
-                <p>Published by {{article.author}} at {{article.publishedAt}}</p>
             </div>
-     </div>
-    {% endfor %}
+            <div class="card-footer">
+                <p>Published by: <span class="author">{{article.author}}</span> at <span
+                        class="author">{{article.publishedAt}}</span></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

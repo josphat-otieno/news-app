@@ -1,5 +1,28 @@
 .card{
-    /* display: flex; */
-    background-color: aquamarine;
-    border: 1px solid black;
+    margin: 2px;
+    padding: 0%;
+}
+.card-header{
+    background-color: green;
+    font-family: Roboto;
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+}
+
+.card-body p{
+    background-color: red;
+    color: white;
+    font-family: Roboto ;
+}
+.author{
+    font-style: italic;
+    font-weight: bold;
+    text-transform: capitalize;
+
+}
+.card-footer{
+    background-color: red;
+    color: white;
+    font-family: Roboto ;
 }

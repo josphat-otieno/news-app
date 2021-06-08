@@ -1,3 +1,36 @@
 ul{
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.card{
+    margin: 2px;
+    padding: 0%;
+}
+.card-header{
+    background-color: green;
+    font-family: Roboto;
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+}
+.card-body{
+    text-decoration: none
+}
+.card-body p{
+    background-color: red;
+    color: white;
+    font-family: Roboto ;
+}
+.author{
+    font-style: italic;
+    font-weight: bold;
+    text-transform: capitalize;
+
+}
+.card-footer{
+    background-color: red;
+    color: white;
+    font-family: Roboto ;
 }
