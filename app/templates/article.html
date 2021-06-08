@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}
 {% if title %}
-<time>{{title}}</time>
+{{title}}
 {% else %}
 <title>trending Articles</title>
 {% endif %}
@@ -25,7 +25,7 @@
                 <p class>{{article.title}}</p>
             </div>
             <div class="card-body">
-                <img src="{{article.urlToImage}}" alt="{{article.title}}" width="300px" height="300px">
+                <img src="{{article.urlToImage}}" alt="{{article.title}}" width="700px" height="500px">
                 <p class="text text-lead"><a href="{{article.url}}">{{article.description}}</a></p>
             </div>
             <div class="card-footer">

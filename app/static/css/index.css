@@ -1,19 +1,20 @@
 .card{
-    margin: 2px;
+    margin: 0px;
     padding: 0%;
 }
 .card-header{
-    background-color: green;
     font-family: Roboto;
-    color: white;
     text-decoration: none;
-    font-size: medium;
+    font-size: 25px;
 }
-
+.card-body{
+    text-decoration: none
+}
 .card-body p{
-    background-color: red;
+    /* background-color: red; */
     color: white;
     font-family: Roboto ;
+    font-size: 25px;
 }
 .author{
     font-style: italic;
@@ -22,7 +23,11 @@
 
 }
 .card-footer{
-    background-color: red;
-    color: white;
+    /* background-color: red; */
+    /* color: white; */
     font-family: Roboto ;
+    font-size: 25px;
+}
+.container{
+    background-color:burlywood;
 }

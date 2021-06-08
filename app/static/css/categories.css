@@ -2,26 +2,25 @@ ul{
     list-style: none;
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 0 20 0 0px;
 }
 .card{
-    margin: 2px;
+    margin: 0px;
     padding: 0%;
 }
 .card-header{
-    background-color: green;
     font-family: Roboto;
-    color: white;
     text-decoration: none;
-    font-size: medium;
+    font-size: 20px;
 }
 .card-body{
     text-decoration: none
 }
 .card-body p{
-    background-color: red;
-    color: white;
+    /* background-color: red;
+    color: white; */
     font-family: Roboto ;
+    font-size: 25px;
 }
 .author{
     font-style: italic;
@@ -30,7 +29,11 @@ ul{
 
 }
 .card-footer{
-    background-color: red;
-    color: white;
+    /* background-color: red;
+    color: white; */
     font-family: Roboto ;
+    font-size: 25px;
+}
+.container{
+    background-color: 003566;
 }
