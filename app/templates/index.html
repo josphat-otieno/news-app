@@ -1,5 +1,6 @@
-{% import 'macros.html' as macro%}
 {% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+
 
 
 {% block title %}
@@ -22,7 +23,7 @@
     <div class="row">
         <div class="col-md-9">
             <h1 class="text text-center text-uppercase text-lead">{{message}}</h1>
-            <div class="card-columns">
+            <div class="jumbotron">
                 {% for top_headline in top_headlines %}
                 <div class="card">
                     <div class="card-title">
