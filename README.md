@@ -30,7 +30,7 @@ These are the behaviours/features that the application implements for use by a u
 * Clone [this repository](https://github.com/josphat-otieno/news-app.git)  using the following commamnd  in the terminal: `git clone https://github.com/josphat-otieno/news-app.git`. 
 * Note:<em>You will need to git installed in your machine. You can install using the following comman: `$ sudo apt-get install git.`</em>
 * After cloning, navigate to the folder where the repo was cloned and open it with your favorite code editor and run the `manage.py` file to interact with the application using the following command `$python3.8 manage.py`
-* Run test_password.py to   run the test units using the following command `$python3.8 manage.py test`
+* Run tests units using the following command `$python3.8 manage.py test`
 ## Known Bugs
 
 No known bugs
