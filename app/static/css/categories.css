@@ -2,10 +2,10 @@ ul{
     list-style: none;
     display: flex;
     justify-content: space-between;
-    margin: 0 20 0 0px;
+    /* margin: 0 20 0 0px; */
 }
 .card{
-    margin: 0px;
+    margin: 2px;
     padding: 0%;
 }
 .card-header{
@@ -35,5 +35,6 @@ ul{
     font-size: 25px;
 }
 .container{
-    background-color: 003566;
+    background-color: burlywood;
+    margin: auto;
 }

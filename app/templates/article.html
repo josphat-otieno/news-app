@@ -18,20 +18,21 @@
 {% block content %}
 <div class="container">
     <h1 class="text-lead text-center">These are the trending articles here</h1>
-    <div class="card-columns">
+    <div class="jumbotrn">
         {% for article in articles %}
         <div class="card">
             <div class="card-header">
                 <p class>{{article.title}}</p>
             </div>
             <div class="card-body">
-                <img src="{{article.urlToImage}}" alt="{{article.title}}" width="700px" height="500px">
+                <img src="{{article.urlToImage}}" alt="{{article.title}}" width="1000px" height="500px">
                 <p class="text text-lead"><a href="{{article.url}}">{{article.description}}</a></p>
             </div>
             <div class="card-footer">
                 <p>Published by: <span class="author">{{article.author}}</span> at <span
                         class="author">{{article.publishedAt}}</span></p>
             </div>
+            <hr>
         </div>
         {% endfor %}
     </div>

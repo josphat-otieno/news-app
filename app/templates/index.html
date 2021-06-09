@@ -23,10 +23,11 @@
     <div class="row">
         <div class="col-md-9">
             <h1 class="text text-center text-uppercase text-lead">{{message}}</h1>
-            <div class="jumbotron">
+            <hr>
+            <div class="card-columns">
                 {% for top_headline in top_headlines %}
                 <div class="card">
-                    <div class="card-title">
+                    <div class="card-header">
                         <p>{{top_headline.title}}</p>
                     </div>
                     <div class="card-body">
@@ -37,7 +38,9 @@
                     <div class="card-footer">
                         <p> Published by <span class="author"> {{top_headline.author}}</span> at <span
                                 class="author">{{top_headline.publishedAt}}</span></p>
+                                
                     </div>
+                    <hr>
                 </div>
                 {% endfor %}
             </div>
@@ -47,9 +50,11 @@
             <hr>
             <div class="sources">
                 {% for source in sources %}
+                <div class="sources">
                 <a href="/article/{{source.id}}">
-                    <p class="text-capitalize text-muted">{{source.name}}</p>
+                    <p class="text-capitalize text-muted" >{{source.name}}</p>
                     {% endfor %}
+                </div>
             </div>
         </div>
     </div>

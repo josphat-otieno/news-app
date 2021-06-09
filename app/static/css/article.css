@@ -1,11 +1,10 @@
 .card{
-    margin: 0px;
+    margin: 2px;
     padding: 0%;
 }
 .card-header{
-    /* background-color: green; */
+    background-color: green;
     font-family: Roboto;
-    /* color: white; */
     text-decoration: none;
     font-size: 20px;
 }
@@ -25,7 +24,12 @@
 }
 .card-footer{
     font-family: Roboto ;
+    font-size: 20px;
 }
 .container{
+    background-color:burlywood;
+    margin: auto;
+}
+.jumbotron{
     background-color:burlywood;
 }
